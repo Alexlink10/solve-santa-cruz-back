@@ -1,4 +1,4 @@
-import Problems from 'modules/problems/typeorm/entities/Problems';
+import Problems from '@modules/problems/typeorm/entities/Problems';
 import {
   Column,
   CreateDateColumn,

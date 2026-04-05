@@ -1,9 +1,9 @@
 import 'reflect-metadata';
 import { DataSource } from 'typeorm';
-import Orders from 'modules/orders/typeorm/entities/Orders';
+import Orders from '@modules/orders/typeorm/entities/Orders';
 import { CreateOrder1773826964192 } from './1777826964192-CreateOrder';
 import { CreateProblems1724184777589 } from './124184777589-CreateProblems';
-import Problems from 'modules/problems/typeorm/entities/Problems';
+import Problems from '@modules/problems/typeorm/entities/Problems';
 
 export const AppDataSource = new DataSource({
   type: 'postgres',

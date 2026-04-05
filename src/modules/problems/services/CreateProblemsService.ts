@@ -1,5 +1,5 @@
-import Problems from '../typeorm/entities/Problems';
-import { AppDataSource } from '../../../shared/typeorm/migrations/data-source';
+import Problems from '@modules/problems/typeorm/entities/Problems';
+import { AppDataSource } from '@shared/typeorm/migrations/data-source';
 
 interface Irequest {
   name: string;

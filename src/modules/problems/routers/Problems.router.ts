@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import ProblemsController from '../contollers/ProblemsController';
+import ProblemsController from '@modules/problems/contollers/ProblemsController';
 import { celebrate, Joi, Segments } from 'celebrate';
 
 const problemsRouter = Router();

@@ -1,8 +1,7 @@
 import ExcelJS from 'exceljs';
 import { Request, Response } from 'express';
 import ExportOrderService from '../services/ExportOrderService';
-import AppError from 'shared/errors/AppError';
-import Problems from 'modules/problems/typeorm/entities/Problems';
+import AppError from '@shared/errors/AppError';
 
 export default class ExportController {
   public async export(request: Request, response: Response): Promise<Response> {

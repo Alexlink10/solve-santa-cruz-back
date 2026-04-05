@@ -1,6 +1,6 @@
-import AppError from 'shared/errors/AppError';
-import { AppDataSource } from 'shared/typeorm/migrations/data-source';
-import Problems from '../typeorm/entities/Problems';
+import AppError from '@shared/errors/AppError';
+import { AppDataSource } from '@shared/typeorm/migrations/data-source';
+import Problems from '@modules/problems/typeorm/entities/Problems';
 interface IRequest {
   id: string;
 }
