@@ -16,6 +16,8 @@ export const AppDataSource = new DataSource({
   entities: [Problems, Orders],
   migrations: [CreateProblems1724184777589, CreateOrder1773826964192],
 
+  migrationsRun: true,
+
   synchronize: false,
   logging: true,
 });
