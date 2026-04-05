@@ -1,0 +1,39 @@
+{
+  "name": "solve-santa-cruz",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules src/shared/http/server.ts",
+    "start": "ts-node src/server.ts",
+    "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
+    "typeorm:ds": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js -d src/shared/typeorm/migrations/data-source.ts",
+    "migration:create": "yarn typeorm migration:create src/shared/typeorm/migrations/CreateMigration",
+    "migration:generate": "yarn typeorm:ds migration:generate src/shared/typeorm/migrations/AutoMigration",
+    "migration:run": "yarn typeorm:ds migration:run",
+    "migration:revert": "yarn typeorm:ds migration:revert"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "celebrate": "^15.0.3",
+    "cors": "^2.8.6",
+    "exceljs": "^4.4.0",
+    "express": "^5.2.1",
+    "joi": "^18.0.2",
+    "migrate": "^2.1.0",
+    "pg": "^8.20.0",
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^0.3.28"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "ts-node": "^10.9.2",
+    "ts-node-dev": "^2.0.0",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.9.3"
+  }
+}
