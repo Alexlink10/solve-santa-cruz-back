@@ -3,15 +3,18 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "id": "finalscripts",
   "scripts": {
     "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules src/shared/http/server.ts",
-    "start": "ts-node src/server.ts",
+    "build": "tsc",
+    "start": "node -r tsconfig-paths/register dist/shared/http/server.js",
+    "start:prod": "npm run build && npm run migration:run && node dist/shared/http/server.js",
     "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
     "typeorm:ds": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js -d src/shared/typeorm/migrations/data-source.ts",
-    "migration:create": "yarn typeorm migration:create src/shared/typeorm/migrations/CreateMigration",
-    "migration:generate": "yarn typeorm:ds migration:generate src/shared/typeorm/migrations/AutoMigration",
-    "migration:run": "yarn typeorm:ds migration:run",
-    "migration:revert": "yarn typeorm:ds migration:revert"
+    "migration:create": "npm run typeorm migration:create src/shared/typeorm/migrations/CreateMigration",
+    "migration:generate": "npm run typeorm:ds migration:generate src/shared/typeorm/migrations/AutoMigration",
+    "migration:run": "npm run typeorm:ds migration:run",
+    "migration:revert": "npm run typeorm:ds migration:revert"
   },
   "keywords": [],
   "author": "",
