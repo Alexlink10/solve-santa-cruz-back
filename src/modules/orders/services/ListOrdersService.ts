@@ -12,7 +12,7 @@ class ListOrdersService {
 
       return orders;
     } catch (error) {
-      console.log('ERRO AQUI >>>>>>', error);
+      console.log('ERRO AQUI >>', error);
       throw error;
     }
   }
