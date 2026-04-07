@@ -8,7 +8,7 @@
     "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules src/shared/http/server.ts",
     "build": "tsc && tsc-alias",
     "start": "node dist/shared/http/server.js",
-    "start:prod": "npm run migration:run && node dist/shared/http/server.js",
+    "start:prod": "npm run migration:run:prod && node dist/shared/http/server.js",
     "typeorm": "ts-node-dev -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
     "typeorm:ds": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js -d src/shared/typeorm/migrations/data-source.ts",
     "migration:create": "npm run typeorm migration:create src/shared/typeorm/migrations/CreateMigration",
