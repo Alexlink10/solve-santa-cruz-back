@@ -5,9 +5,11 @@ import {
   Entity,
   JoinColumn,
   ManyToOne,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
+import OrderPhotos from './OrderPhotos';
 
 @Entity('orders')
 class Orders {
@@ -50,5 +52,10 @@ class Orders {
   @ManyToOne(() => Problems, problems => problems.orders, { eager: true })
   @JoinColumn({ name: 'problems_id' })
   problems: Problems;
+
+  @OneToMany(() => OrderPhotos, photo => photo.order, {
+    cascade: true,
+  })
+  photos: OrderPhotos[];
 }
 export default Orders;

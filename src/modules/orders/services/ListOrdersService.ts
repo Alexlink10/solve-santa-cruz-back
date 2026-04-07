@@ -5,7 +5,7 @@ class ListOrdersService {
   public async execute(): Promise<Orders[]> {
     const ordersRepository = AppDataSource.getRepository(Orders);
 
-    const orders = await ordersRepository.find();
+    const orders = await ordersRepository.find({ relations: ['photos'] });
     return orders;
   }
 }

@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import CreateOrderService from '../services/CreateOrderService';
 import ListOrdersService from '../services/ListOrdersService';
+import { uploadToS3 } from '../../../config/upload'; // 👈 IMPORTANTE
 
 export default class OrdersController {
   public async index(request: Request, response: Response) {
@@ -21,6 +22,17 @@ export default class OrdersController {
       descrition,
     } = request.body;
 
+    const files = request.files as Express.Multer.File[] | undefined;
+
+    const imageUrls: string[] = [];
+
+    if (files?.length) {
+      for (const file of files) {
+        const url = await uploadToS3(file);
+        imageUrls.push(url);
+      }
+    }
+
     const createOrder = new CreateOrderService();
 
     const orders = await createOrder.execute({
@@ -32,6 +44,7 @@ export default class OrdersController {
       longitude,
       reference,
       descrition,
+      photos: imageUrls,
     });
     return response.json(orders);
   }

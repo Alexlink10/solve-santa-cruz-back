@@ -55,11 +55,6 @@ export class CreateOrder1773826964192 implements MigrationInterface {
             type: 'varchar',
           },
           {
-            name: 'image_url',
-            type: 'varchar',
-            isNullable: true,
-          },
-          {
             name: 'created_at',
             type: 'timestamptz',
             default: 'now()',
