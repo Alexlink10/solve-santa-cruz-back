@@ -28,7 +28,7 @@
     "module": "Commonjs",                                /* Specify what module code is generated. */
      "rootDir": "src",                                  /* Specify the root folder within your source files. */
      "moduleResolution": "node",                     /* Specify how TypeScript looks up a file from a given module specifier. */
-      "baseUrl": ".",
+     "baseUrl": ".",
     "paths": {
       "@config/*": ["src/config/*"],
       "@modules/*": ["src/modules/*"],
