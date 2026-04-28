@@ -14,8 +14,8 @@ ordersRouter.post(
   celebrate({
     [Segments.BODY]: {
       problems_id: Joi.string().required(),
-      address: Joi.string(),
-      number: Joi.string(),
+      address: Joi.string().empty('').optional(),
+      number: Joi.string().empty('').optional(),
       neighborhooduf: Joi.string(),
       latitude: Joi.number(),
       longitude: Joi.number(),

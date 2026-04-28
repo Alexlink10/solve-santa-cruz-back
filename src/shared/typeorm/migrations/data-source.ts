@@ -24,5 +24,5 @@ export const AppDataSource = new DataSource({
   migrationsRun: true,
 
   synchronize: false,
-  logging: true,
+  logging: false,
 });

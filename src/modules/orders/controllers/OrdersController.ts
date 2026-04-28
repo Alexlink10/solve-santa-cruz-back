@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import CreateOrderService from '../services/CreateOrderService';
 import ListOrdersService from '../services/ListOrdersService';
 import { uploadToS3 } from '../../../config/upload'; // 👈 IMPORTANTE
+import { sendOrderEmail } from '@config/mail/NodeMailer';
 
 export default class OrdersController {
   public async index(request: Request, response: Response) {
@@ -46,6 +47,7 @@ export default class OrdersController {
       descrition,
       photos: imageUrls,
     });
+    sendOrderEmail(orders).catch(console.error);
     return response.json(orders);
   }
 }

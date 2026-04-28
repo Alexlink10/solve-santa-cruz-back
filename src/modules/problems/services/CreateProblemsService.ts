@@ -15,7 +15,7 @@ class CreateProblemsService {
     });
 
     if (problemExixt) {
-      throw new AppError('NOme já cadastrado');
+      throw new AppError('Nome já cadastrado');
     }
 
     const Problemss = problemsRepository.create({
